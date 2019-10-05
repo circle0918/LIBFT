@@ -19,5 +19,6 @@ char *ft_strdup(const char *s1);
 char *ft_strcpy(char *d, char *s);
 char *ft_strncpy(char *dest, char *src, size_t n);
 char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 
 #endif
