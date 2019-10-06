@@ -20,5 +20,8 @@ char *ft_strcpy(char *d, char *s);
 char *ft_strncpy(char *dest, char *src, size_t n);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
+int	ft_strncmp(char *s1, char *s2, size_t n);
+char *ft_strstr(const char *s1, const char *s2);
+char *ft_strnstr(const char *s1, const char *s2, size_t n);
 
 #endif
