@@ -2,11 +2,14 @@
 
 char *ft_strnstr(const char *s1, const char *s2, size_t n)
 {
+    size_t lenS2;
+
+    lenS2 = ft_strlen(s2);
     if (*s2 == '\0')
         return (char *)(s1);
-    while (*s1 && *s2 && n >= (ft_strlen(s2) + 1))
+    while (*s1 && *s2 && n-- >= lenS2)
     {
-        if (ft_strncmp(s1, s2, n) == 0)
+        if (ft_strncmp((char *)s1, (char *)s2, lenS2) == 0) //memcmp
         {
             return (char *)s1;
         }
