@@ -25,8 +25,8 @@ int main()
     char m[50] = "world";
     char d1[50] = "hello";
     char m1[50] = "world";
-    memccpy(d, m, 'o', 7);
-    ft_memccpy(d1, m1, 'o', 7);
+    memccpy(d, m, 'o', 0);
+    ft_memccpy(d1, m1, 'o', 0);
     printf("s:%s\n", d);
     printf("m:%s\n", d1);
     return 0;
