@@ -19,7 +19,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 }
 
 #include <assert.h>
-int main()
+/*int main()
 {
     char a[50] = "hello";
     char b[50] = "world";
@@ -31,4 +31,4 @@ int main()
       printf("%s\n",a1);
     printf("%s\n", a);
     return 0;
-}
+}*/
