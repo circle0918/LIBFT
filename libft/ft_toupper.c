@@ -9,8 +9,8 @@ int ft_toupper(int c)
     return (c);
 }
 
-int main()
+/*int main()
 {
     printf("%c",ft_toupper('0'));
     return 0;
-}
+}*/

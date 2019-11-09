@@ -13,6 +13,7 @@ void ft_bzero(void *s, size_t n)
     }
 }
 
+/*
 #include <stdio.h>
 int main()
 {
@@ -29,5 +30,5 @@ int main()
     ft_bzero(str,0);
     printf("%c,%c,%c",str[0],str[1],str[2]);
  //   printf("%s",str1);*/
-    return 0;
-}
+//    return 0;
+//}
