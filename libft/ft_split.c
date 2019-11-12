@@ -8,31 +8,30 @@ int count_words(char const *s, char c)
     i = 0;
     count = 0;
     if (s[i] != c)
-        count++; 
+        count++;
     while (s[++i] != '\0')
         if (s[i] != c && s[i - 1] == c)
             count++;
-  //  printf("%d",count);
+    //  printf("%d",count);
     return (count);
 }
 
-/*char **ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-    unsigned int i;
-    int cntr;
+    char *new;
+    int k;
+    int j;
 
-    while (s[i])
+    new = malloc(count_words(s, c) * sizeof(char *));
+    k = 0;
+    if (s[0] != c)
+        j = k;
+    while (s[++k])
     {
-        while (s[i] == c)
-            i++;
-        if (s[i] != '\0')
-            cntr++;
-        while (s[i] && (s[i] != c))
-            i++;
+        if (s[k] != c && s[k - 1] == c)
+        
     }
-    printf("%d", cntr);
-    //return (cntr);
-}*/
+}
 
 int main(int ac, char **av)
 {
