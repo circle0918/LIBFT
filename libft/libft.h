@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// int ft_char_in_str(char c, char *str);
+int ft_char_in_str(char c, char *str);
 void *ft_memset(void *b, int c, size_t len);
 void *ft_memalloc(size_t size);
 void ft_bzero(void *s, size_t n);
@@ -38,5 +38,6 @@ void *ft_calloc(size_t count, size_t size);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s1, char const *set);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
