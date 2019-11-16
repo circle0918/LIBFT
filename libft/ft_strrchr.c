@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yyuan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/16 15:05:19 by yyuan             #+#    #+#             */
+/*   Updated: 2019/11/16 15:05:22 by yyuan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char *ft_strrchr(const char *s, int c)
@@ -21,7 +33,7 @@ char *ft_strrchr(const char *s, int c)
     return (NULL);
 }
 
-int main () {
+/*int main () {
    const char str[] = "whahth";
    const char ch = '\0';
    char *ret;
@@ -31,4 +43,4 @@ int main () {
    printf("String after |%c| is - |%s|\n", ch, ret);
    
    return(0);
-}
+}*/

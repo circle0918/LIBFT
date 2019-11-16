@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyuan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 15:00:26 by yyuan             #+#    #+#             */
-/*   Updated: 2019/11/16 15:00:32 by yyuan            ###   ########.fr       */
+/*   Created: 2019/11/16 14:57:17 by yyuan             #+#    #+#             */
+/*   Updated: 2019/11/16 14:57:20 by yyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int strcmp(const char *s1, const char *s2)
+/* Écrit La chaine de caractères s sur le file
+ * descriptor donné, suivie d’un retour à la ligne.*/
+void ft_putendl_fd(char *s, int fd)
 {
-    while (*s1 && *s2 && *s1 == *s2)
-    {
-        s1++;
-        s2++;
-    }
-    return (*s1 - *s2);
+    ft_putstr_fd(s, fd);
+    ft_putchar_fd('\n',fd);
 }

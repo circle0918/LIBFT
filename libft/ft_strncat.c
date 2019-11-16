@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yyuan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/16 15:03:44 by yyuan             #+#    #+#             */
+/*   Updated: 2019/11/16 15:03:46 by yyuan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char *ft_strncat(char *s1, const char *s2, size_t n)
@@ -17,7 +29,7 @@ char *ft_strncat(char *s1, const char *s2, size_t n)
     return (tmp);
 }
 
-int main(int ac, char**av)
+/*int main(int ac, char**av)
 {
   //  strncat(av[1],av[2],2);
   //  ft_strncat(av[3],av[4],2);
@@ -25,4 +37,4 @@ int main(int ac, char**av)
     printf("hanshu %s\n",ft_strncat(av[1],av[2],2));
  //   printf("wodeaa %s\n",ft_strncat(av[3],av[4],2));
     return 0;
-}
+}*/

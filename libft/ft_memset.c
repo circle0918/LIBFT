@@ -1,12 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yyuan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/16 14:56:35 by yyuan             #+#    #+#             */
+/*   Updated: 2019/11/16 14:56:38 by yyuan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+/*This function is a copy of the memset function in the string.h library.
+ * According to the man the memset function writes len bytes of value c
+ * (converted to an unsigned char) to the string b. This function returns it's
+ * first argument.*/
 
 void *ft_memset(void *b, int c, size_t len)
 {
     size_t i;
     char *tmp;
 
-    if (b == NULL)
-        return NULL;
     i = 0;
     tmp = b;
     while (i < len)
@@ -17,7 +32,7 @@ void *ft_memset(void *b, int c, size_t len)
     return (b);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <assert.h>
 int main(void)
 {
@@ -34,4 +49,4 @@ int main(void)
     printf("m%s\n", m);
     printf("t%s\n", t);
     return 0;
-}
+}*/
