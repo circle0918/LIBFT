@@ -1,5 +1,7 @@
 #include "libft.h"
 
+/* copy n bytes, all are 0*/
+
 void ft_bzero(void *s, size_t n)
 {
     unsigned char *str;

@@ -21,7 +21,7 @@ char *ft_strnstr(const char *s1, const char *s2, size_t n)
         return (char *)(s1);
     while (*s1 && *s2 && n-- >= lenS2)
     {
-        if (ft_strncmp((char *)s1, (char *)s2, lenS2) == 0) //memcmp
+        if (ft_strncmp(s1, s2, lenS2) == 0) //memcmp
         {
             return (char *)s1;
         }

@@ -12,32 +12,37 @@
 
 #include "libft.h"
 
-/*int count_size(int n)
-{
-    int count;
+// /*int count_size(int n)
+// {
+//     int count;
 
-    count = 0;
+//     count = 0;
 
-}*/
+// }*/
 char *ft_itoa(int n)
 {
     int f;
     unsigned int nbr;
+    unsigned int nb;
     int len;
 
     char *new;
 
     f = 0;
     len = 0;
+    if(n==0)
+    return (ft_strdup("0"));
     if (n < 0)
     {
         f = 1;
-        n = n * (-1);
+        nbr = n * (-1);
     }
-    nbr = n;
-    while (n)
+    else
+        nbr = n;
+    nb = nbr;
+    while (nbr)
     {
-        n /= 10;
+        nbr /= 10;
         len++;
     }
     int count = f + len + 1;
@@ -48,20 +53,22 @@ char *ft_itoa(int n)
     {
         new[0] = '-';
     }
-    while (nbr)
+    while (nb)
     {
-        new[count - 1] = nbr % 10 + '0';
+        new[count - 2] = nb % 10 + '0';
+    //    printf("%d : %d : %s$\n", nb, count, new);
         count--;
-        nbr /= 10;
+        nb /= 10;
     }
-    new[count] = '\0';
+    new[f + len] = '\0';
+ //   printf("out : %s$\n", new);
     return (new);
 }
 
-/*int main(void)
-{
-    char *new = ft_itoa(1234);
-    printf("%s\n", new);
-    free(new);
-    return (0);
-}*/
+// int main(void)
+// {
+//     char *new = ft_itoa(-0);
+//     printf("%smm\n", new);
+//     free(new);
+//     return (0);
+// }

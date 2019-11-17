@@ -12,48 +12,51 @@
 
 #include "libft.h"
 
+/* Alloue (avec malloc(3)) et retourne une copie de la
+ * chaine de caractères donnée en argument, sans les
+ * caractères spécifiés dans le set donné en argument
+ * au début et à la fin de la chaine de caractères.*/
+
 char *ft_strtrim(char const *s1, char const *set)
 {
-    size_t count;
-    size_t len;
-    char *new;
-    char *prt;
-    char *ss1;
+    char *front;
+    char *back;
 
-    count = 0;
-    ss1 = (char*)s1;
-    while (*s1)
+    front = (char *)s1;
+    back = (char *)(front + ft_strlen(s1) - 1);
+    // printf("%ld\n",front - back);
+    // printf("%c&&",*back);
+
+    while (*front)
     {
-        if (ft_char_in_str(*s1, (char*)set) == 1)
-            count++;
-        s1++;
+        if (!ft_char_in_str(*front, (char *)set))
+            break;
+        front++;
+        if (*front == '\0')
+            return ft_strdup("");
     }
-  //  printf("%zu",count);
-    len = ft_strlen(ss1) - count + 1;
-   // printf("%zu\n",len);
-  //  printf("%zu\n",len);
-    new = malloc(len * sizeof(char));
-    if (new == NULL)
-        return (NULL);
-    prt = new;
-    while (*ss1)
+    while (*back)
     {
-        if (!ft_char_in_str(*ss1,(char*)set))
+        if (!ft_char_in_str(*back, (char *)set))
         {
-            *new = *ss1;
-            new ++;
+            //printf("%c : %ld\n", *back, back - s1);
+            break;
         }
-        ss1++;
+        back--;
     }
-    new[len]='\0';
-    return (prt);
+
+    return (ft_substr(s1, (front - s1), (back - front + 1)));
 }
 
-/*int main(int ac, char **av)
-{
-    char *p;
-    p = ft_strtrim(av[1], av[2]);
- //   ft_strtrim(av[1], av[2]);
-    printf("%s", p);
-    return 0;
-}*/
+
+// int main(int ac, char **av)
+// {
+//     char *s1 = "  \t \t \n   \n\n\n\t";
+//         char *s2 = "Hello \t  Please\n Trim me !";
+//         //char *ret = ft_strtrim(s1, " \n\t");
+//         char *ret = strtrim(s1, " \n\t");
+
+//   printf("%s", ret);
+//     return 0;
+// }
+

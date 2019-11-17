@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* cut len longer, from index start*/
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *new;
@@ -29,7 +29,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         i++;
         start++;
     }
-    new[len + 1] = '\0';
+    new[len] = '\0';
     return (new);
 }
 

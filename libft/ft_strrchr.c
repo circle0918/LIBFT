@@ -12,35 +12,47 @@
 
 #include "libft.h"
 
+/* The strrchr() function is identical to strchr(), except it locates the
+ * last occurrence of c.*/
+
 char *ft_strrchr(const char *s, int c)
 {
-    const char *tmp;
-    const char *save;
+    unsigned char *tmp;
+    unsigned char *save;
 
-    tmp = s;
-    while (*tmp)
+    tmp = (unsigned char *)s;
+    //    if (c == '\0')
+    //        return (char *)(tmp);
+      save = NULL;
+    if (*tmp)
     {
-        if (*tmp == c)
+        while (*tmp)
         {
-            save = tmp;
+            if (*tmp == c)
+                save = tmp;
+            tmp++;
+            if (c == '\0' && *tmp == '\0')
+                return (char *)(tmp);
+         //   else
+         //       return (NULL);
         }
-        tmp++;
+        return (char *)(save);
     }
-    return (char *)(save);
-    if (c == '\0')
-    return (char*)(tmp);
     else
-    return (NULL);
+        return (NULL);
+    //   else
+    //       return (NULL);
 }
 
-/*int main () {
-   const char str[] = "whahth";
-   const char ch = '\0';
-   char *ret;
+/*int main()
+{
 
-   ret = strrchr(str, ch);
+        char *src = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
+        char *d1 = strrchr(src, L'–');
+        char *d2 = ft_strrchr(src, L'–');
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   return(0);
+    printf("W%s\n", d2);
+    printf("B%s\n", d1);
+
+    return (0);
 }*/

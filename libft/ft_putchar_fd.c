@@ -15,10 +15,6 @@
 /* Écrit le caractère c sur le file descriptor donné,
  * our desired file descriptor so we use 1 since we will be writing 1 byte.*/
 
-/*void ft_putchar_fd(char c, int fd)
-{
-    write(fd, &c, 1);
-}*/
 
 void ft_putchar_fd(char c, int fd)
 {

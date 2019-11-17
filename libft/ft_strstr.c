@@ -18,7 +18,7 @@ char *ft_strstr(const char *s1, const char *s2)
         return ((char *)s1);
     while (*s1 && *s2)
     {
-        if (ft_strncmp((char *)s1, (char *)s2, ft_strlen(s2) == 0))
+        if (ft_strncmp((char *)s1, (char *)s2, ft_strlen(s2)) == 0)
         {
             return (char *)s1;
         }

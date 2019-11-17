@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/* locates the first occurrence of c. If c is `\0', the func-
+ *    tions locate the terminating `\0'*/
+
 char *ft_strchr(const char *s, int c)
 {
     const char *tmp;

@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
+
+/*allocate count * size memory, sizeof (char) == 1*/
 
 void *ft_calloc(size_t count, size_t size)
 {
     size_t *new;
-    new = malloc((size) * sizeof(count));
+    new = malloc((count * size) * sizeof(char));
     if (new == NULL)
         return (NULL);
-    ft_bzero(new, count*size);
+    ft_bzero(new, count * size);
     return (new);
 }
 
