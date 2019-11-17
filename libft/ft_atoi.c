@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-
 int ft_atoi(const char *str)
 {
     int neg;
-    int res;
+    long int res;
 
     neg = 1;
     res = 0;
@@ -32,8 +31,13 @@ int ft_atoi(const char *str)
     {
         res = res * 10 + (*str - 48);
         str++;
+        if (res * neg < -2147483648)
+            return (0);
+        else if (res * neg > 2147483647)
+            return (-1);
     }
-    return (res * neg);
+
+    return (int)(res * neg);
 }
 
 /*int main(int ac, char **av)
