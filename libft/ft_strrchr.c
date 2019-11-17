@@ -21,38 +21,46 @@ char *ft_strrchr(const char *s, int c)
     unsigned char *save;
 
     tmp = (unsigned char *)s;
-    //    if (c == '\0')
-    //        return (char *)(tmp);
-      save = NULL;
-    if (*tmp)
+    save = NULL;
+    if (c == '\0')
+        return strchr(s, '\0');
+    while (*tmp)
     {
-        while (*tmp)
-        {
-            if (*tmp == c)
-                save = tmp;
-            tmp++;
-            if (c == '\0' && *tmp == '\0')
-                return (char *)(tmp);
-         //   else
-         //       return (NULL);
-        }
-        return (char *)(save);
+        if (*tmp == c)
+            save = tmp;
+        tmp++;
     }
+    if (save == NULL)
+        return NULL;
     else
-        return (NULL);
-    //   else
-    //       return (NULL);
+        return (char *)(save);
+
+    /*    /////////////////
+    const char *found, *p;
+    c = (unsigned char)c;
+    ///Since strchr is fast, we use it rather than the obvious loop.  
+    if (c == '\0')
+        return strchr(s, '\0');
+    found = NULL;
+    while ((p = strchr(s, c)) != NULL)
+    {
+        found = p;
+        s = p + 1;
+    }
+    return (char *)found;
+*/
 }
 
-/*int main()
+int main()
 {
 
-        char *src = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
-        char *d1 = strrchr(src, L'–');
-        char *d2 = ft_strrchr(src, L'–');
+        char *src = "";
+        printf("src : %d\n", *src);
+        char *d1 = strrchr(src, 'd');
+        char *d2 = ft_strrchr(src, 'd');
 
-    printf("W%s\n", d2);
     printf("B%s\n", d1);
+    printf("W%s\n", d2);
 
     return (0);
-}*/
+}
