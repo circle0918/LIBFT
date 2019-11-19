@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
+
 int ft_char_in_str(char c, char *str);
 void *ft_memset(void *b, int c, size_t len);
 void *ft_memalloc(size_t size);
@@ -50,5 +56,7 @@ char *ft_strcat(char *dest, char *src);
 int ft_is_space(char c);
 int ft_isupper(int c);
 int ft_islower(int c);
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **alst, t_list *new);
 
 #endif
