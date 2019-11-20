@@ -17,26 +17,26 @@ t_list *ft_lstnew(void *content)
     return (newlist);
 }
 
-int main()
-{
-    t_list *t1;
-     int a = 10;
-     int b = 20;
-    char *p1 = "hello";
-    char *p2 = "word";
-    t1 = ft_lstnew(p1);
- //   printf("%s",t1->content);
-     t_list *t2;
-    t2 = ft_lstnew(p2);
-         t1->next = t2;
-        //  printf("%p\n",t1);
-        //  printf("%p\n",t1->next);
-        //  printf("%p\n",t2);
-   // printf("%s",t1->next->content);
-   t_list *t3 =ft_lstnew(&b);
-   t2->next = t3;
-   printf("%d",*(int *)(t1->next->next->content));
+// int main()
+// {
+//     t_list *t1;
+//      int a = 10;
+//      int b = 20;
+//     char *p1 = "hello";
+//     char *p2 = "word";
+//     t1 = ft_lstnew(p1);
+//  //   printf("%s",t1->content);
+//      t_list *t2;
+//     t2 = ft_lstnew(p2);
+//          t1->next = t2;
+//         //  printf("%p\n",t1);
+//         //  printf("%p\n",t1->next);
+//         //  printf("%p\n",t2);
+//    // printf("%s",t1->next->content);
+//    t_list *t3 =ft_lstnew(&b);
+//    t2->next = t3;
+//    printf("%d",*(int *)(t1->next->next->content));
 
 
-    return(0);
-}
+//     return(0);
+// }
