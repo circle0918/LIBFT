@@ -43,13 +43,25 @@ void *ft_memmove(void *dst, const void *src, size_t len)
   return (dst);
 }
 
-//int main(int ac, char **av)
-//{
-/*  printf("22%s  44%s\n",av[2],av[4]);
-    memmove(av[1],av[2],2);
-    ft_memmove(av[3],av[4],2);
-    printf("hanshu dst %s   src %s\n",av[1],av[2]);
-    printf("wodeaa dst %s   src %s\n",av[3],av[4]);*/
-//printf("%s", ft_memmove(((void *)0), ((void *)0), 5));
-//return 0;
-//}
+// int main(int ac, char **av)
+// {
+//   char dest []= "lorem ipsum dolor sit amet";
+//   char dest1 []= "lorem ipsum dolor sit amet";
+
+//   char src [] = "con\0sec\0\0te\0tur";
+//   char src1 [] = "con\0sec\0\0te\0tur";
+
+// memmove(dest,src,10);
+// ft_memmove(dest1,src1,10);
+//   	write(1, dest, 22);
+// 	write(1, "\n", 1);
+// 	write(1, dest1, 22);
+//   	write(1, "\n", 1);
+
+//     	write(1, src, 22);
+// 	write(1, "\n", 1);
+// 	write(1, src1, 22);
+//     // printf("%s\n",memmove(dest, "con\0sec\0\0te\0tur", 10));
+//     // printf("%s\n",ft_memmove(dest1, "con\0sec\0\0te\0tur", 10));
+// return 0;
+// }

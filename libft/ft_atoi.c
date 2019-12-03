@@ -24,6 +24,8 @@ int ft_atoi(const char *str)
     {
         neg = -1;
         str++;
+        if (*str < '0' || *str > '9')
+            return (0);
     }
     if (*str == '+')
         str++;
@@ -40,9 +42,9 @@ int ft_atoi(const char *str)
     return (int)(res * neg);
 }
 
-/*int main(int ac, char **av)
-{
-    printf("%d", atoi(av[1]));
-    return 0;
-}
-*/
+// int main(int ac, char **av)
+// {
+//     printf("%d\n", atoi(av[1]));
+//     printf("%d\n", ft_atoi(av[1]));
+//     return 0;
+// }

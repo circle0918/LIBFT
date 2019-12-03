@@ -51,16 +51,16 @@ char *ft_strrchr(const char *s, int c)
 */
 }
 
-int main()
-{
+// int main()
+// {
 
-        char *src = "";
-        printf("src : %d\n", *src);
-        char *d1 = strrchr(src, 'd');
-        char *d2 = ft_strrchr(src, 'd');
+//         char *src = "";
+//         printf("src : %d\n", *src);
+//         char *d1 = strrchr(src, 'd');
+//         char *d2 = ft_strrchr(src, 'd');
 
-    printf("B%s\n", d1);
-    printf("W%s\n", d2);
+//     printf("B%s\n", d1);
+//     printf("W%s\n", d2);
 
-    return (0);
-}
+//     return (0);
+// }
