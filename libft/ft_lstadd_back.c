@@ -9,11 +9,14 @@ Ajoute l’élément new à la fin de la liste.*/
 void ft_lstadd_back(t_list **alst, t_list *new)
 {
     t_list *tmp;
+
     if (alst && *alst)
     {
         tmp = ft_lstlast(*alst);
         tmp->next = new;
     }
+    else
+    *alst = new;
 }
 
 // void ft_lstadd_back(t_list **alst, t_list *new)
@@ -37,21 +40,25 @@ void ft_lstadd_back(t_list **alst, t_list *new)
 // {
 //     char *p1 = "hello";
 //     char *p2 = "word";
-//     char *p3 = "fkffword";
+//     char *p3 = "ffkffword";
+//     char *p4 = "111";
 
 //     t_list *t1;
 //     t_list *t2;
 //     t_list *t3;
+//     t_list *t4;
 //     t1 = ft_lstnew(p1);
 //     t2 = ft_lstnew(p2);
 //     t3 = ft_lstnew(p3);
+//     t4 = ft_lstnew(p4);
 //       t1->next = t2;
 //     t_list **alst;
 //     alst = &t1;
 //  //   printf("%p\t%p\n", *alst, t1);
 //     ft_lstadd_back(alst, t3);
+//     ft_lstadd_back(alst, t4);
 //  //   printf("%p\t%p\n", t1->next, t2);
-//     printf("%s", (*alst)->next->next->content);
+//     printf("%s", (*alst)->next->next->next->content);
 
 //     return (0);
 //     }

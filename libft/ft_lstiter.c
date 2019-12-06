@@ -5,16 +5,35 @@
  * Itère sur la list lst et applique la fonction f au
  * contenu chaque élément.*/
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
-{
-    t_list *tmp;
+// void *(f)(void *content)
+// {
+//     char *s = content;
 
-    tmp = lst;
-    if (!lst || !f)
-        return;
-    while (tmp)
-    {
-        f(tmp);
-        tmp = tmp->next;
-    }
-}
+//     s[0] = 'O';
+//     s[1] = 'K';
+// }
+
+// void ft_lstiter(t_list *lst, void (*f)(void *))
+// {
+//     t_list *tmp;
+//   //  t_list *new;
+
+//     if (!lst || !f)
+//         return;
+//     tmp = lst;
+//     while (tmp)
+//     {
+//         new = tmp->next;
+//         f(tmp);
+//         tmp = new;
+//     }
+// }
+
+// int main()
+// {
+//     t_list *l1 = ft_lstnew(strdup("he"));
+//     l1->next = ft_lstnew(strdup("llo"));
+//     ft_lstiter(l1, f);
+
+//     printf("%s", l1->next->content);
+// }
