@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int count_words(char const *s, char c)
+static int count_words(char const *s, char c)
 {
     int count;
     int i;
@@ -38,8 +38,7 @@ char **ft_split(char const *s, char c)
 
     i = 0;
     k = 0;
-    new = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
-    if (new == NULL)
+    if (!s || !c || !(new = (char **)malloc((count_words(s, c) + 1) * sizeof(char *))))
         return (NULL);
     while (s[i])
     {

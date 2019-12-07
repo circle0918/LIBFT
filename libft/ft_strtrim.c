@@ -17,11 +17,24 @@
  * caractères spécifiés dans le set donné en argument
  * au début et à la fin de la chaine de caractères.*/
 
+static int ft_char_in_str(char c, char *str)
+{
+    while (*str)
+    {
+        if (*str == c)
+            return (1);
+        str++;
+    }
+    return (0);
+}
+
 char *ft_strtrim(char const *s1, char const *set)
 {
     char *front;
     char *back;
 
+    if (!s1 || !set)
+        return (0);
     front = (char *)s1;
     back = (char *)(front + ft_strlen(s1) - 1);
     // printf("%ld\n",front - back);
@@ -48,15 +61,13 @@ char *ft_strtrim(char const *s1, char const *set)
     return (ft_substr(s1, (front - s1), (back - front + 1)));
 }
 
-
 // int main(int ac, char **av)
 // {
-//     char *s1 = "  \t \t \n   \n\n\n\t";
-//         char *s2 = "Hello \t  Please\n Trim me !";
+//     char s1[] = "  \t \t \n  t \n\n\n\t";
+//        // char *s2 = "Hello \t  Please\n Trim me !";
 //         //char *ret = ft_strtrim(s1, " \n\t");
-//         char *ret = strtrim(s1, " \n\t");
+//         char *ret = ft_strtrim(s1, " \n\t");
 
 //   printf("%s", ret);
 //     return 0;
 // }
-

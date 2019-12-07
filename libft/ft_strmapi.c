@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-	/* Renew string s,  pass to f function the specific index of our character in the given string.*/
+/* Renew string s,  pass to f function the specific index of our character in the given string.*/
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -21,6 +21,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     size_t len;
     char *new;
 
+    if (!s || !f)
+        return (NULL);
     src = (char *)s;
     i = 0;
     len = ft_strlen(src) + 1;

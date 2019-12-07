@@ -11,6 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+static int ft_islower(int c)
+{
+    int t;
+
+    t = 'a';
+    while (t <= 'z')
+    {
+        if (t == c)
+            return (1);
+        t++;
+    }
+    return (0);
+}
 
 int ft_toupper(int c)
 {

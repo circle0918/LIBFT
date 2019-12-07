@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+static int ft_isupper(int c)
+{
+    int t;
+
+    t = 'A';
+    while (t <= 'Z')
+    {
+        if (t == c)
+            return (1);
+        t++;
+    }
+    return (0);
+}
+
 int ft_tolower(int c)
 {
     if (ft_isupper(c) == 1)

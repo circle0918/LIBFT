@@ -8,46 +8,24 @@ résultant des applications successives de f. la
 fonction del est la pour detruire le contenu d un
 element si necessaire*/
 
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *),
-//                   void (*del)(void *))
-// {
-//     t_list *new;
-//     t_list *tmp;
-
-//     tmp = lst;
-//     if (!new = ft_lstnew(tmp->content) || !f || !del)
-//         return (NULL);
-//     while (tmp)
-//     {
-//     }
-//     return (new);
-// }
-
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *cursor;
-    t_list *next_node;
-    t_list *new_lst;
-    t_list *alst;
+  t_list *tmp;
+  t_list *result;
 
-    if (lst && f)
-    {
-        cursor = lst;
-        if (!(new_lst = ft_lstnew(cursor->content)))
-            return (NULL);
-        alst = new_lst;
-        while (cursor)
-        {
-            f(cursor);
-            next_node = cursor->next;
-            if (!(new_lst->next = ft_lstnew(next_node->content)))
-                return (NULL);
-            if (del)
-                ft_lstdelone(cursor, del);
-            cursor = next_node;
-            new_lst = new_lst->next;
-        }
-        return (alst);
-    }
+  if (!f || !lst || !del || !(result = ft_lstnew(f(lst->content))))
     return (NULL);
+  lst = lst->next;
+  tmp = result;
+  while(lst)
+  {
+    if(!(tmp->next=ft_lstnew(f(lst->content))))
+    {
+      ft_lstclear(&result,del);
+      return(NULL);
+    }
+    tmp = tmp->next;
+    lst = lst->next;
+  }
+  return (result);
 }

@@ -11,13 +11,11 @@ typedef struct s_list
     struct s_list *next;
 } t_list;
 
-int count_size(int n);
-int ft_char_in_str(char c, char *str);
 void *ft_memset(void *b, int c, size_t len);
 void *ft_memalloc(size_t size);
 void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dst, const void *src, size_t n);
-void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void *ft_memccpy(void *dst, const void *src, int c, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -44,7 +42,6 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 int ft_toupper(int c);
 int ft_tolower(int c);
-int ft_is_space(char c);
 void *ft_calloc(size_t count, size_t size);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
@@ -56,9 +53,6 @@ void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 char *ft_itoa(int n);
 char *ft_strcat(char *dest, char *src);
-int ft_is_space(char c);
-int ft_isupper(int c);
-int ft_islower(int c);
 t_list *ft_lstnew(void *content);
 void ft_lstadd_front(t_list **alst, t_list *new);
 int ft_lstsize(t_list *lst);
@@ -72,6 +66,5 @@ void ft_lstiter(t_list *lst, void (*f)(void *));
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),
                   void (*del)(void *));
 
-// void *(f)(void *content);
 
 #endif
