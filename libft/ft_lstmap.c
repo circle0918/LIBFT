@@ -8,24 +8,40 @@ résultant des applications successives de f. la
 fonction del est la pour detruire le contenu d un
 element si necessaire*/
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static t_list	*ft_lstnewone(void *content)
 {
-  t_list *tmp;
-  t_list *result;
+	t_list *new;
 
-  if (!f || !lst || !del || !(result = ft_lstnew(f(lst->content))))
-    return (NULL);
-  lst = lst->next;
-  tmp = result;
-  while(lst)
-  {
-    if(!(tmp->next=ft_lstnew(f(lst->content))))
-    {
-      ft_lstclear(&result,del);
-      return(NULL);
-    }
-    tmp = tmp->next;
-    lst = lst->next;
-  }
-  return (result);
+	if (!(new = malloc(sizeof(t_list))))
+		return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list *begin;
+	t_list *new;
+	t_list *tmp;
+
+	if (lst == NULL || (*f) == NULL)
+		return (NULL);
+	if (!(new = ft_lstnewone((*f)(lst->content))))
+		return (0);
+	lst = lst->next;
+	begin = new;
+	tmp = new;
+	while (lst)
+	{
+		if (!(new = ft_lstnewone((*f)(lst->content))))
+		{
+			ft_lstclear(&begin, (*del));
+			return (0);
+		}
+		tmp->next = new;
+		tmp = new;
+		lst = lst->next;
+	}
+	return (begin);
 }
