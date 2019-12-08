@@ -48,9 +48,9 @@ int ft_atoi(const char *str)
     return (int)(res * neg);
 }
 
-// int main(int ac, char **av)
-// {
-//     printf("%d\n", atoi(av[1]));
-//     printf("%d\n", ft_atoi(av[1]));
-//     return 0;
-// }
+int main(int ac, char **av)
+{
+    printf("%d\n", atoi("1233333333333333333"));
+    printf("%d\n", ft_atoi("1233333333333333333"));
+    return 0;
+}
