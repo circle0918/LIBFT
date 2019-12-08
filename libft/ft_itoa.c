@@ -39,28 +39,24 @@ int count_size(int n)
 char *ft_itoa(int n)
 {
     unsigned int nb;
-    int num;
     int len;
     char *new;
-
-    num = n;
+    
+    nb = n;
     len = count_size(n);
     if (!(new = (char *)malloc(len * sizeof(char))))
         return (NULL);
-    if (num == 0)
+    if (n == 0)
         return (ft_strdup("0"));
-    if (num < 0)
+    if (n < 0)
     {
         new[0] = '-';
-        nb = num * -1;
+        nb = nb * -1;
     }
-    else
-        nb = num;
     new[len - 1] = '\0';
     while (nb)
     {
-        new[len - 2] = nb % 10 + '0';
-        len--;
+        new[len-- - 2] = nb % 10 + '0';
         nb /= 10;
     }
     return (new);
