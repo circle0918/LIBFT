@@ -45,11 +45,12 @@ char		*ft_itoa(int n)
 	char			*new;
 
 	num = n;
+	if (num == 0)
+		return (ft_strdup("0"));
 	len = count_size(n);
 	if (!(new = (char *)malloc(len * sizeof(char))))
 		return (NULL);
-	if (num == 0)
-		return (ft_strdup("0"));
+
 	if (num < 0)
 	{
 		new[0] = '-';
